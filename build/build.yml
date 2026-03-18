@@ -5,8 +5,8 @@ analysis:
   script_file: main.py
   requirements: requirements.txt
 datasets:
-- dataset_id: 8cd2e5fb-c63a-42f5-a166-8960d3e8f1bb
-  archetype_id: RINuSBRacS6A
+- dataset_id: e1b01fe9-8b44-46be-9938-c71472ad31dc
+  archetype_id: svbrCbhSWD3y
   import_path: generated.models
   function_name: create_dataset
   archetype_path: generated/archetype.json
@@ -15,7 +15,7 @@ privacy:
 execution:
   environment: enclave
   timeout: 300
-generated_at: '2026-03-18 23:50:28.399802'
+generated_at: '2026-03-19 01:29:38.173143'
 build_info:
   command: epsilon build main.py
   detected_datasets: 1

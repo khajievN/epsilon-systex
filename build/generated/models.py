@@ -53,17 +53,6 @@ class Vitals:
         self._data = data if data else {}
 
     @property
-    def blood_pressure(self):
-        # Try direct access first (JSON format)
-        if 'blood_pressure' in self._data:
-            return self._data['blood_pressure']
-        # Try flattened access (CSV format)
-        for k, v in self._data.items():
-            if k.endswith('.blood_pressure'):
-                return v
-        return None
-
-    @property
     def heart_rate(self):
         # Try direct access first (JSON format)
         if 'heart_rate' in self._data:
@@ -71,6 +60,17 @@ class Vitals:
         # Try flattened access (CSV format)
         for k, v in self._data.items():
             if k.endswith('.heart_rate'):
+                return v
+        return None
+
+    @property
+    def blood_pressure(self):
+        # Try direct access first (JSON format)
+        if 'blood_pressure' in self._data:
+            return self._data['blood_pressure']
+        # Try flattened access (CSV format)
+        for k, v in self._data.items():
+            if k.endswith('.blood_pressure'):
                 return v
         return None
 

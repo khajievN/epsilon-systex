@@ -1,5 +1,5 @@
 {
-  "$id": "8cd2e5fb-c63a-42f5-a166-8960d3e8f1bb/RINuSBRacS6A",
+  "$id": "e1b01fe9-8b44-46be-9938-c71472ad31dc/svbrCbhSWD3y",
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
   "title": "epsilon",
   "type": "object",
@@ -7,13 +7,13 @@
     "vitals": {
       "type": "object",
       "properties": {
-        "blood_pressure": {
-          "type": "object",
-          "description": "Blood Pressure"
-        },
         "heart_rate": {
           "type": "integer",
           "description": "Heart Rate"
+        },
+        "blood_pressure": {
+          "type": "object",
+          "description": "Blood Pressure"
         }
       }
     },
